@@ -54,7 +54,7 @@ u64 HID_GetState(void)
 
 	ret = REG_HID | mcuGetSpecialHID();
 	if (!(ret & BUTTON_ARROW))
-		ret |= HID_ConvertCPAD(codec.cpad_x, codec.cpad_y);
+		ret |= HID_ConvertCPAD(0, 0);
 
 	if (codec.ts_x <= 0xFFF)
 		ret |= BUTTON_TOUCH;
